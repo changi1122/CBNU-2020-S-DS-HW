@@ -25,7 +25,7 @@ void main()
 float sum(float list[], int n)
 {
     printf("value of list = %p\n", list);
-    printf("address of list = %p\n\n", &list); //함수 호출시 list라는 포인터 변수가 생김
+    printf("address of list = %p\n\n", &list); //함수 호출시 list라는 포인터 변수가 생김 (별개의 주소 가짐)
 
     int j;
     float tempsum = 0;
