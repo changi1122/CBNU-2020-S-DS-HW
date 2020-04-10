@@ -1,5 +1,3 @@
-//EUC-KR
-
 #include <stdio.h>
 
 #define MAX_SIZE 100
@@ -10,12 +8,12 @@ int i;
 
 void main()
 {
-    printf("[----- [¿ÃøÏ√¢] [2019038074] -----]\n\n");
+    printf("[----- [Ïù¥Ïö∞Ï∞Ω] [2019038074] -----]\n\n");
 
     for(i = 0; i < MAX_SIZE; i++)
         input[i] = i;
 
-    /* call by reference »Æ¿Œ ¿ß«— input¿« ¡÷º“ */
+    /* call by reference ÌôïÏù∏ ÏúÑÌïú inputÏùò Ï£ºÏÜå */
     printf("address of input = %p\n", input);
 
     answer = sum(input, MAX_SIZE);
@@ -25,7 +23,7 @@ void main()
 float sum(float list[], int n)
 {
     printf("value of list = %p\n", list);
-    printf("address of list = %p\n\n", &list); //«‘ºˆ »£√‚Ω√ list∂Û¥¬ ∆˜¿Œ≈Õ ∫Øºˆ∞° ª˝±Ë (∫∞∞≥¿« ¡÷º“ ∞°¡¸)
+    printf("address of list = %p\n\n", &list); //Ìï®Ïàò Ìò∏Ï∂úÏãú listÎùºÎäî Ìè¨Ïù∏ÌÑ∞ Î≥ÄÏàòÍ∞Ä ÏÉùÍπÄ (Î≥ÑÍ∞úÏùò Ï£ºÏÜå Í∞ÄÏßê)
 
     int j;
     float tempsum = 0;

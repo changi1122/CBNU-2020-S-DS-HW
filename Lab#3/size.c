@@ -1,17 +1,15 @@
-//EUC-KR
-
 #include <stdio.h>
 #include <stdlib.h>
 
 void main()
 {
-    printf("[----- [ÀÌ¿ìÃ¢] [2019038074] -----]\n\n");
+    printf("[----- [ì´ìš°ì°½] [2019038074] -----]\n\n");
     
     int **x;
 
-    printf("sizeof(x)   = %lu\n", sizeof(x));   //Æ÷ÀÎÅÍ º¯¼öÀÇ Å©±â
-    printf("sizeof(*x)  = %lu\n", sizeof(*x));  //Æ÷ÀÎÅÍ º¯¼öÀÇ Å©±â
-    printf("sizeof(**x) = %lu\n", sizeof(**x)); //int ÀÚ·áÇüÀÇ Å©±â
+    printf("sizeof(x)   = %lu\n", sizeof(x));   //í¬ì¸í„° ë³€ìˆ˜ì˜ í¬ê¸°
+    printf("sizeof(*x)  = %lu\n", sizeof(*x));  //í¬ì¸í„° ë³€ìˆ˜ì˜ í¬ê¸°
+    printf("sizeof(**x) = %lu\n", sizeof(**x)); //int ìë£Œí˜•ì˜ í¬ê¸°
 
-    /* 64bit machine¿¡¼­ Æ÷ÀÎÅÍ º¯¼öÀÇ Å©±â´Â 8 bytesÀÌ³ª, ÄÄÆÄÀÏ·¯°¡ 32bit ÇÁ·Î±×·¥À¸·Î ÄÄÆÄÀÏÇÏ¿© 4 bytes°¡ Ãâ·ÂµÇ´Â µíÇÏ´Ù. */
+    /* 64bit machineì—ì„œ í¬ì¸í„° ë³€ìˆ˜ì˜ í¬ê¸°ëŠ” 8 bytesì´ë‚˜, ì»´íŒŒì¼ëŸ¬ê°€ 32bit í”„ë¡œê·¸ë¨ìœ¼ë¡œ ì»´íŒŒì¼í•˜ì—¬ 4 bytesê°€ ì¶œë ¥ë˜ëŠ” ë“¯í•˜ë‹¤. */
 }

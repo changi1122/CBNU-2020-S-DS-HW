@@ -1,10 +1,8 @@
-//EUC-KR
-
 #include <stdio.h>
 
 int main()
 {
-    printf("----- ÀÌ¿ìÃ¢  2019038074 -----\n\n");
+    printf("----- ì´ìš°ì°½  2019038074 -----\n\n");
 
     int i;
     int *ptr;
@@ -18,7 +16,7 @@ int main()
     printf("value of ptr == %p\n", ptr);
     printf("address of ptr == %p\n", &ptr);
 
-    // ptr¿¡ iÀÇ ÁÖ¼Ò ´ëÀÔ
+    // ptrì— iì˜ ì£¼ì†Œ ëŒ€ì…
     ptr = &i;
 
     printf("\n[checking values after ptr = &i]\n");
@@ -28,9 +26,9 @@ int main()
     printf("address of ptr == %p\n", &ptr);
     printf("value of *ptr == %d\n", *ptr);
 
-    /* Æ÷ÀÎÅÍ ptrÀÇ ´ã°í ÀÖ´Â ÁÖ¼Ò, ÀÚ½ÅÀÇ ÁÖ¼Ò, ÀúÀåµÈ iÀÇ ÁÖ¼Ò¸¦ ÀÌ¿ëÇØ ¿ªÂüÁ¶ÇÏ´Â °É º¸ÀÔ´Ï´Ù. */
+    /* í¬ì¸í„° ptrì˜ ë‹´ê³  ìˆëŠ” ì£¼ì†Œ, ìì‹ ì˜ ì£¼ì†Œ, ì €ì¥ëœ iì˜ ì£¼ì†Œë¥¼ ì´ìš©í•´ ì—­ì°¸ì¡°í•˜ëŠ” ê±¸ ë³´ì…ë‹ˆë‹¤. */
 
-    // dptr¿¡ ptrÀÇ ÁÖ¼Ò ´ëÀÔ
+    // dptrì— ptrì˜ ì£¼ì†Œ ëŒ€ì…
     dptr = &ptr;
 
     printf("\n[checking values after dptr = &ptr]\n");
@@ -44,9 +42,9 @@ int main()
     printf("value of *dptr == %p\n", *dptr);
     printf("value of **dptr == %d\n", **dptr);
 
-    /* ÀÌÁß Æ÷ÀÎÅÍ dptr¿¡ ´ëÇØ ´ã°í ÀÖ´Â ÁÖ¼Ò, ÀÚ½ÅÀÇ ÁÖ¼Ò, ÇÑ¹ø ¿ªÂüÁ¶ÇÑ °ª, µÎ¹ø ¿ªÂüÁ¶ÇÑ °ªÀ» º¸ÀÔ´Ï´Ù. */
+    /* ì´ì¤‘ í¬ì¸í„° dptrì— ëŒ€í•´ ë‹´ê³  ìˆëŠ” ì£¼ì†Œ, ìì‹ ì˜ ì£¼ì†Œ, í•œë²ˆ ì—­ì°¸ì¡°í•œ ê°’, ë‘ë²ˆ ì—­ì°¸ì¡°í•œ ê°’ì„ ë³´ì…ë‹ˆë‹¤. */
 
-    // *ptrÀÇ °ª º¯°æ
+    // *ptrì˜ ê°’ ë³€ê²½
     *ptr = 7777;
     
     printf("\n[after *ptr = 7777]\n");
@@ -54,9 +52,9 @@ int main()
     printf("value of *ptr == %d\n", *ptr);
     printf("value of **dptr == %d\n", **dptr);
     
-    /* ptrÀÇ °ªÀ» ÀÌ¿ëÇØ i¸¦ º¯°æÇÑ °É º¸ÀÔ´Ï´Ù. */
+    /* ptrì˜ ê°’ì„ ì´ìš©í•´ ië¥¼ ë³€ê²½í•œ ê±¸ ë³´ì…ë‹ˆë‹¤. */
 
-    // **dptrÀÇ °ª º¯°æ
+    // **dptrì˜ ê°’ ë³€ê²½
     **dptr = 8888;
 
     printf("\n[after **dptr = 8888]\n");
@@ -64,7 +62,7 @@ int main()
     printf("value of *ptr == %d\n", *ptr);
     printf("value of **dptr == %d\n", **dptr);
 
-    /* ÀÌÁß Æ÷ÀÎÅÍ dptrÀÇ °ªÀ» ÀÌ¿ëÇØ i¸¦ º¯°æÇÑ °É º¸ÀÔ´Ï´Ù. */
+    /* ì´ì¤‘ í¬ì¸í„° dptrì˜ ê°’ì„ ì´ìš©í•´ ië¥¼ ë³€ê²½í•œ ê±¸ ë³´ì…ë‹ˆë‹¤. */
 
     return 0;
 }

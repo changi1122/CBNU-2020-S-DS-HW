@@ -1,5 +1,3 @@
-//EUC-KR
-
 #include <stdio.h>
 
 struct student1 {
@@ -15,7 +13,7 @@ typedef struct {
 } student2;
 
 int main() {
-    printf("[----- [ÀÌ¿ìÃ¢] [2019038074] -----]\n\n");
+    printf("[----- [ì´ìš°ì°½] [2019038074] -----]\n\n");
 
     struct student1 st1 = {'A', 100, 'A'};
 
@@ -23,22 +21,22 @@ int main() {
     printf("st1.studentId = %d\n", st1.studentId);
     printf("st1.lastName = %c\n", st1.grade);
 
-    student2 st2 = {'B', 200, 'B'}; //typedef¸¦ »ç¿ëÇÏ¸é ±¸Á¶Ã¼ ¼±¾ğ½Ã struct¸¦ »ı·« °¡´É
+    student2 st2 = {'B', 200, 'B'}; //typedefë¥¼ ì‚¬ìš©í•˜ë©´ êµ¬ì¡°ì²´ ì„ ì–¸ì‹œ structë¥¼ ìƒëµ ê°€ëŠ¥
     
     printf("\nst2.lastName = %c\n", st2.lastName);
     printf("st2.studentId = %d\n", st2.studentId);
     printf("st2.lastName = %c\n", st2.grade);
 
     student2 st3;
-    st3 = st2; //±íÀº º¹»ç
+    st3 = st2; //ê¹Šì€ ë³µì‚¬
     
     printf("\nst3.lastName = %c\n", st3.lastName);
     printf("st3.studentId = %d\n", st3.studentId);
     printf("st3.lastName = %c\n", st3.grade);
 
-    //ºñ±³
+    //ë¹„êµ
     /*
-    if(st3 == st2)      //¿À·ù ¹ß»ı : ±¸Á¶Ã¼ Á÷Á¢ ºñ±³ ºÒ°¡´É
+    if(st3 == st2)      //ì˜¤ë¥˜ ë°œìƒ : êµ¬ì¡°ì²´ ì§ì ‘ ë¹„êµ ë¶ˆê°€ëŠ¥
         printf("equal\n");
     else
         printf("not equal\n");

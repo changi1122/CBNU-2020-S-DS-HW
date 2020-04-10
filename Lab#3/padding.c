@@ -1,5 +1,3 @@
-//EUC-KR
-
 #include <stdio.h>
 
 struct student {
@@ -9,7 +7,7 @@ struct student {
 };
 
 int main() {
-    printf("[----- [ÀÌ¿ìÃ¢] [2019038074] -----]\n\n");
+    printf("[----- [ì´ìš°ì°½] [2019038074] -----]\n\n");
 
     struct student pst;
 
@@ -17,7 +15,7 @@ int main() {
     printf("size of int = %ld\n", sizeof(int));
     printf("size of short = %ld\n", sizeof(short));
 
-    /* ´Ü¼ø ±¸Á¶Ã¼ ¸â¹ö Å©±â ÇÕÀº 19 bytesÀÌÁö¸¸, ½ÇÁ¦ ±¸Á¶Ã¼ Å©±â´Â 24 bytesÀÌ´Ù. */
+    /* ë‹¨ìˆœ êµ¬ì¡°ì²´ ë©¤ë²„ í¬ê¸° í•©ì€ 19 bytesì´ì§€ë§Œ, ì‹¤ì œ êµ¬ì¡°ì²´ í¬ê¸°ëŠ” 24 bytesì´ë‹¤. */
 
     return 0;
 }

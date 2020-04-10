@@ -1,40 +1,38 @@
-//EUC-KR
-
 #include <stdio.h>
 
 int main(void)
 {
-    printf("----- ÀÌ¿ìÃ¢  2019038074 -----\n\n");
+    printf("----- ì´ìš°ì°½  2019038074 -----\n\n");
 
     char charType;
     int integerType;
     float floatType;
     double doubleType;
 
-    // °¢ º¯¼öÀÇ Å©±â(¹ÙÀÌÆ®) Ãâ·Â
+    // ê° ë³€ìˆ˜ì˜ í¬ê¸°(ë°”ì´íŠ¸) ì¶œë ¥
     printf("Size of char: %ld byte\n", sizeof(charType));
     printf("Size of int: %ld byte\n", sizeof(integerType));
     printf("Size of float: %ld byte\n", sizeof(floatType));
     printf("Size of double: %ld byte\n", sizeof(doubleType));
-    /* char, int, float, double º¯¼öÀÇ Å©±â¸¦ È®ÀÎÇÕ´Ï´Ù. */
+    /* char, int, float, double ë³€ìˆ˜ì˜ í¬ê¸°ë¥¼ í™•ì¸í•©ë‹ˆë‹¤. */
 
     printf("-----------------------------------------\n");
 
-    // °¢ ÀÚ·áÇüÀÇ Å©±â(¹ÙÀÌÆ®) Ãâ·Â
+    // ê° ìë£Œí˜•ì˜ í¬ê¸°(ë°”ì´íŠ¸) ì¶œë ¥
     printf("Size of char: %ld byte\n", sizeof(char));
     printf("Size of int: %ld byte\n", sizeof(int));
     printf("Size of float: %ld byte\n", sizeof(float));    
     printf("Size of double: %ld byte\n", sizeof(double));
-    /* char, int, float, double ÀÚ·áÇüÀÇ Å©±â¸¦ È®ÀÎÇÕ´Ï´Ù. */
+    /* char, int, float, double ìë£Œí˜•ì˜ í¬ê¸°ë¥¼ í™•ì¸í•©ë‹ˆë‹¤. */
 
     printf("-----------------------------------------\n");
 
-    // °¢ ÀÚ·áÇüº° Æ÷ÀÎÅÍÀÇ Å©±â(¹ÙÀÌÆ®) Ãâ·Â
+    // ê° ìë£Œí˜•ë³„ í¬ì¸í„°ì˜ í¬ê¸°(ë°”ì´íŠ¸) ì¶œë ¥
     printf("Size of char*: %ld byte\n", sizeof(char*));
     printf("Size of int*: %ld byte\n", sizeof(int*));
     printf("Size of float*: %ld byte\n", sizeof(float*));
     printf("Size of double*: %ld byte\n", sizeof(double*));
-    /* Æ÷ÀÎÅÍ º¯¼ö´Â º¯¼öÀÇ ÁÖ¼Ò¸¦ ´ã±â¿¡ ÀÚ·áÇüÀÌ ´Ş¶óµµ ±× Å©±â´Â °°´Ù´Â °É ¾Ë ¼ö ÀÖ½À´Ï´Ù. */
+    /* í¬ì¸í„° ë³€ìˆ˜ëŠ” ë³€ìˆ˜ì˜ ì£¼ì†Œë¥¼ ë‹´ê¸°ì— ìë£Œí˜•ì´ ë‹¬ë¼ë„ ê·¸ í¬ê¸°ëŠ” ê°™ë‹¤ëŠ” ê±¸ ì•Œ ìˆ˜ ìˆìŠµë‹ˆë‹¤. */
 
     return 0;
 }

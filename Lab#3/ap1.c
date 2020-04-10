@@ -1,17 +1,15 @@
-//EUC-KR
-
 #include <stdio.h>
 #include <stdlib.h>
 
 int main() {
-    printf("[----- [ÀÌ¿ìÃ¢] [2019038074] -----]\n\n");
+    printf("[----- [ì´ìš°ì°½] [2019038074] -----]\n\n");
     
-    // Á¤¼ö ¹è¿­
+    // ì •ìˆ˜ ë°°ì—´
     int list[5];
     int *plist[5] = {NULL, };
 
-    // Á¤¼ö Æ÷ÀÎÅÍ
-    plist[0] = (int *)malloc(sizeof(int)); //Èü¿¡¼­ µ¿Àû ÇÒ´ç ¹ŞÀ½.
+    // ì •ìˆ˜ í¬ì¸í„°
+    plist[0] = (int *)malloc(sizeof(int)); //í™ì—ì„œ ë™ì  í• ë‹¹ ë°›ìŒ.
 
     list[0] = 1;
     list[1] = 100;
@@ -22,21 +20,21 @@ int main() {
     printf("address of list[0]          = %p\n", &list[0]);
     printf("value of list               = %p\n", list);
     printf("address of list (&list)     = %p\n", &list);
-    /* ¹è¿­ ÀÌ¸§, 0¹øÂ° ÁÖ¼Ò, ¹è¿­ÀÇ ÁÖ¼Ò ¸ğµÎ µ¿ÀÏ */
+    /* ë°°ì—´ ì´ë¦„, 0ë²ˆì§¸ ì£¼ì†Œ, ë°°ì—´ì˜ ì£¼ì†Œ ëª¨ë‘ ë™ì¼ */
 
     printf("-----------------------------------------\n\n");
     printf("value of list[1]            = %d\n", list[1]);
     printf("address of list[1]          = %p\n", &list[1]);
     printf("value of *(list + 1)        = %d\n", *(list + 1));
     printf("address of list + 1         = %p\n", list + 1);
-    /* ¹è¿­ ÁÖ¼Ò¿¡ Áõ°¨ ¿¬»ê½Ã intÅ©±â ¸¸Å­ ÀÌµ¿*/
+    /* ë°°ì—´ ì£¼ì†Œì— ì¦ê° ì—°ì‚°ì‹œ intí¬ê¸° ë§Œí¼ ì´ë™*/
 
     printf("-----------------------------------------\n\n");
     printf("value of *plist[0]          = %d\n", *plist[0]);
     printf("&plist[0]                   = %p\n", &plist[0]);
     printf("&plist                      = %p\n", &plist);
     printf("plist                       = %p\n", plist);
-    printf("plist[0]                    = %p\n", plist[0]); //µ¿Àû ÇÒ´çµÈ ¿µ¿ªÀÇ ÁÖ¼Ò Ãâ·ÂµÊ.
+    printf("plist[0]                    = %p\n", plist[0]); //ë™ì  í• ë‹¹ëœ ì˜ì—­ì˜ ì£¼ì†Œ ì¶œë ¥ë¨.
     printf("plist[1]                    = %p\n", plist[1]);
     printf("plist[2]                    = %p\n", plist[2]);
     printf("plist[3]                    = %p\n", plist[3]);

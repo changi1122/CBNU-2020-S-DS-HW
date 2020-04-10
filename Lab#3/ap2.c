@@ -1,11 +1,9 @@
-//EUC-KR
-
 #include <stdio.h>
 #include <stdlib.h>
 
 void main()
 {
-    printf("[----- [ÀÌ¿ìÃ¢] [2019038074] -----]\n\n");
+    printf("[----- [ì´ìš°ì°½] [2019038074] -----]\n\n");
 
     int list[5];
     int *plist[5];
@@ -25,7 +23,7 @@ void main()
     printf("address of list + 4 = %p\n", list + 4);
     printf("address of list[4]  = %p\n", &list[4]);
 
-    /* ¹è¿­Àº ¿¬¼ÓÀû, Æ÷ÀÎÅÍ Å¸ÀÔ¿¡ Áõ°¨ ¿¬»ê½Ã Å©±â¸¸Å­ ÀÌµ¿ */
+    /* ë°°ì—´ì€ ì—°ì†ì , í¬ì¸í„° íƒ€ì…ì— ì¦ê° ì—°ì‚°ì‹œ í¬ê¸°ë§Œí¼ ì´ë™ */
 
     free(plist[0]);
 
