@@ -207,15 +207,17 @@ void evaluation()
 	// exp를 증가하며 postfixExp 왼쪽부터 오른쪽으로 이동
 	while (*exp != '\0')
 	{
-		if (getToken(*exp) == operand) // *exp가 피연산자라면
+		if (getToken(*exp) == operand) // *exp가 피연산자이면
 		{
 			evalPush(*exp - '0');
 		}
-		else // *exp가 연산자이면 스택에서 피연산자 두 개를 pop해 연산 후 push
+		else // *exp가 연산자이면
 		{
+			// 스택에서 피연산자 두 개를 pop
 			val2 = evalPop();
 			val1 = evalPop();
 
+			// 연산자의 종류에 따라 피연산자 두 개를 연산 후 다시 스택에 push
 			precedence operator = getToken(*exp);
 
 			switch (operator)
