@@ -119,13 +119,54 @@ void toPostfix()
 	/* exp를 증가시켜가면서, 문자를 읽고 postfix로 변경 */
 	while(*exp != '\0')
 	{
-		/* 필요한 로직 완성 */
+		if(getToken(*exp) == operand) // *exp가 피연산자라면
+		{
+			charCat(exp);
+		}
+		else // *exp가 연산자라면
+		{
+			if (getToken(*exp) == rparen)
+			{
+				x = postfixPop();
 
+				// 닫는 괄호이면 여는 괄호까지 스택 pop
+				while(getToken(x) != lparen)
+				{
+					charCat(&x);
+					x = postfixPop();
+				}
+			}
+			else if (getToken(*exp) == lparen)
+			{
+				// 여는 괄호이면 스택에 push
+				postfixPush(*exp);
+			}
+			else
+			{
+				// 연산자이면 스택의 top들과 *exp를 비교하면서 스택의 top이 우선순위가 높으면(또는 같으면)
+				// 스택에서 pop하고 넘기기, *exp이 우선순위 높으면 스택에 push
+				while(postfixStackTop != -1 && getPriority(postfixStack[postfixStackTop]) >= getPriority(*exp))
+				{
+					x = postfixPop();
+					charCat(&x);
+				}
+
+				postfixPush(*exp);
+			}
+			
+		}
+
+		exp++;
 	}
 
-	/* 필요한 로직 완성 */
-
+	// 스택의 남은 연산자들 넘기기
+	while (postfixStackTop != -1)
+	{
+		x = postfixPop(); 
+		charCat(&x);
+	}
 }
+
 void debug()
 {
 	printf("\n---DEBUG\n");
@@ -154,9 +195,55 @@ void reset()
 	evalResult = 0;
 }
 
+/**
+ * postfixExp의 수식을 evalStack을 이용하여 계산한다.
+ */
 void evaluation()
 {
-	/* postfixExp, evalStack을 이용한 계산 */
+	char *exp = postfixExp; // postfixExp의 문자 하나씩을 읽기위한 포인터
+	int val1;				// 임시로 값을 저장하기 위한 변수
+	int val2;				// 임시로 값을 저장하기 위한 변수
+
+	// exp를 증가하며 postfixExp 왼쪽부터 오른쪽으로 이동
+	while (*exp != '\0')
+	{
+		if (getToken(*exp) == operand) // *exp가 피연산자라면
+		{
+			evalPush(*exp - '0');
+		}
+		else // *exp가 연산자이면 스택에서 피연산자 두 개를 pop해 연산 후 push
+		{
+			val2 = evalPop();
+			val1 = evalPop();
+
+			precedence operator = getToken(*exp);
+
+			switch (operator)
+			{
+			case plus:
+				val1 = val1 + val2;
+				evalPush(val1);
+				break;
+			case minus:
+				val1 = val1 - val2;
+				evalPush(val1);
+				break;
+			case times:
+				val1 = val1 * val2;
+				evalPush(val1);
+				break;
+			case divide:
+				val1 = val1 / val2;
+				evalPush(val1);
+				break;
+			}
+		}
+
+		exp++;
+	}
+	
+	// evalStack에 남은 값이 계산 결과
+	evalResult = evalPop();
 }
 
 

@@ -1,6 +1,8 @@
 /*
  * circularQ.c
- *
+ * 
+ *  2020 Data Structures, Homework #5
+ *  Department of Computer Science at Chungbuk National University
  */
 
 #include <stdio.h>
@@ -22,7 +24,6 @@ void enQueue(QueueType *cQ, element item);
 void deQueue(QueueType *cQ, element* item);
 void printQ(QueueType *cQ);
 void debugQ(QueueType *cQ);
-
 element getElement();
 
 
