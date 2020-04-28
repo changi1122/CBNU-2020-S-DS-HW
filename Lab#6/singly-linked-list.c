@@ -39,6 +39,8 @@ void printList(headNode* h);
 
 int main()
 {
+	printf("[----- 2019038074 이우창 -----]\n\n");
+
 	char command;
 	int key;
 	headNode* headnode=NULL;
