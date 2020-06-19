@@ -20,6 +20,7 @@
 #define MAX_STACK_SIZE 20
 #define MAX_QUEUE_SIZE 20
 
+
 /* 구조체 */
 typedef struct Vertex {
     int num;                /* Vertex 번호 */
@@ -33,6 +34,7 @@ typedef struct VertexHead {
 typedef struct Graph {
     VertexHead* vlist;      /* Vertex 배열: vlist[MAX_VERTEX] */
 } Graph;
+
 
 /* 함수 */
 void createGraph(Graph* g);                    	/* 빈 그래프 생성 */
@@ -60,6 +62,7 @@ int pop();
 void enQueue(int v);
 int deQueue();
 
+
 /* 전역 변수 */
 Graph graph;                // 그래프
 int vflag[MAX_VERTEX];      // Vertex 생성 여부 : TRUE or FALSE
@@ -71,6 +74,7 @@ int stack[MAX_STACK_SIZE];
 int queue[MAX_QUEUE_SIZE];
 int front = -1;
 int rear = -1;
+
 
 int main()
 {
@@ -104,37 +108,37 @@ int main()
 			destroyGraph(&graph);
 			break;
 		case 'v': case 'V':
-			printf("Your Key(1~20) = ");
+			printf("Your Key(1~%d) = ", MAX_VERTEX);
 			scanf("%d", &key);
 			insertVertex(graph, key - 1);
 			break;
 		case 'b': case 'B':
-			printf("Your Key(1~20) = ");
+			printf("Your Key(1~%d) = ", MAX_VERTEX);
 			scanf("%d", &key);
 			deleteVertex(graph, key - 1);
 			break;
 		case 'e': case 'E':
-			printf("from(1~20) = ");
+			printf("from(1~%d) = ", MAX_VERTEX);
 			scanf("%d", &from);
-            printf("to  (1~20) = ");
+            printf("to  (1~%d) = ", MAX_VERTEX);
             scanf("%d", &to);
 			insertEdge(graph, from - 1, to - 1);
 			break;
 		case 'd': case 'D':
-			printf("from(1~20) = ");
+			printf("from(1~%d) = ", MAX_VERTEX);
 			scanf("%d", &from);
-            printf("to  (1~20) = ");
+            printf("to  (1~%d) = ", MAX_VERTEX);
             scanf("%d", &to);
 			deleteEdge(graph, from - 1, to - 1);
 			break;
 		case 'f': case 'F':
-			printf("Your Key(1~20) = ");
+			printf("Your Key(1~%d) = ", MAX_VERTEX);
 			scanf("%d", &key);
 			depthFS(graph, key - 1);
 			break;
 
 		case 's': case 'S':
-			printf("Your Key(1~20) = ");
+			printf("Your Key(1~%d) = ", MAX_VERTEX);
 			scanf("%d", &key);
 			breadthFS(graph, key - 1);
 			break;
@@ -209,11 +213,14 @@ void deleteVertex(Graph g, int vertex_num)
 
 	// 간선 삭제
 	Vertex* search = g.vlist[vertex_num].head;
+	int delete_num = -1;
 
 	while (search != NULL) {
-		deleteFromLinkedList(g, vertex_num, search->num);
-		deleteFromLinkedList(g, search->num, vertex_num);
+		delete_num = search->num;
 		search = search->link;
+
+		deleteFromLinkedList(g, vertex_num, delete_num);
+		deleteFromLinkedList(g, delete_num, vertex_num);
 	}
 
 	g.vlist[vertex_num].head = NULL;	
@@ -309,7 +316,7 @@ void breadthFS(Graph g, int vertex_num)
 		return;
 	}
 	if (vflag[vertex_num] == FALSE || g.vlist[vertex_num].head == NULL) {
-		printf("삽입되지 않은 정점, 간선이 없는 정점에서 깊이 우선 탐색할 수 없음.\n");
+		printf("삽입되지 않은 정점, 간선이 없는 정점에서 너비 우선 탐색할 수 없음.\n");
 		return;
 	}
 
@@ -346,8 +353,13 @@ void breadthFS(Graph g, int vertex_num)
 /* 그래프의 Vertex, Edge 출력 */
 void printGraph(Graph g)
 {
+	if (g.vlist == NULL) {
+		printf("그래프가 초기화되지 않음.\n");
+		return;
+	}
+
 	// 필드명
-	printf("[Init]  [Num ] -> [Adjacent Vertex]\n\n");
+	printf("\n[Init]  [Num ] -> [Adjacent Vertex]\n\n");
 
 	for (int i = 0; i < MAX_VERTEX; i++) {
 		printf("[  %c ]  [%3d ]", (vflag[i]) ? 'T' : 'F', i + 1);
