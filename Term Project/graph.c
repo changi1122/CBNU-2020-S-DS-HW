@@ -177,8 +177,22 @@ void createGraph(Graph* g)
 /* 그래프에 할당된 메모리 반환 */
 void destroyGraph(Graph* g)
 {
-	if (g->vlist != NULL)
+	if (g->vlist != NULL) {
+		// 연결리스트 해제
+		for (int i = 0; i < MAX_VERTEX; i++) {
+			Vertex* search = g->vlist[i].head;
+			while(search) {
+				int delete_num = search->num;
+				search = search->link;
+
+				deleteFromLinkedList(*g, i, delete_num);
+				deleteFromLinkedList(*g, delete_num, i);
+			}
+		}	
+
+		// 정점 배열 해제
 		free(g->vlist);
+	}
 	g->vlist = NULL;
 }
 
